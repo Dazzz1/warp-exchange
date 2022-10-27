@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zjl.dao.OrderMapper">
+    <insert id="insertList">
+        insert into orders (id, createdAt, direction, price, quantity, sequenceId, status, unfilledQuantity, updatedAt, userId)
+        values
+        <foreach collection="orders" item="item" index="index" separator=",">
+            (#{item.id},#{item.createTime},#{item.direction},#{item.price},#{item.quantity},#{item.sequenceId},#{item.status},#{item.unfilledQuantity}
+            ,#{item.updateTime},#{item.userId})
+        </foreach>
+    </insert>
+</mapper>

@@ -1,0 +1,19 @@
+server:
+  port: 8083
+eureka:
+  instance:
+    instance-id: api
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+http:
+  timeout: 3000
+
+auth:
+  api:
+    expire: 50000
+  user:
+    secret:
+      expire: 1800000
+
+

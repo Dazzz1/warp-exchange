@@ -1,0 +1,6 @@
+server:
+  port: 8005
+
+eureka:
+  instance:
+    instance-id: quotation

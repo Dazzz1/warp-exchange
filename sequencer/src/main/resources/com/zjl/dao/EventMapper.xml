@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zjl.dao.EventMapper">
+
+    <insert id="insertList">
+        insert into event(sequenceId, type, data, createAt) VALUES
+        <foreach collection="events" item="item" index="index" separator=",">
+            (#{item.sequenceId},#{item.type},#{item.data},#{item.createAt})
+        </foreach>
+
+    </insert>
+
+    <select id="selectMaxSequenceId" resultType="long">
+        select sequenceId from event order by sequenceId desc limit 0,1
+    </select>
+</mapper>

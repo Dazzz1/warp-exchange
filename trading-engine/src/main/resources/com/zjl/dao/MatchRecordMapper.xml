@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zjl.dao.MatchRecordMapper">
+
+    <insert id="insertList">
+        insert into match_details(counterOrderId, counterUserId, createdAt, direction, orderId, price, quantity, sequenceId, type, userId)
+        VALUES
+        <foreach collection="list" item="item" separator=",">
+            (#{item.makerOrder.id},#{item.makerOrder.userId},#{item.createAt},#{item.tackerOrder.direction},#{item.tackerOrder.id},#{item.price}
+            ,#{item.quantity},#{item.tackerOrder.sequenceId},'TRACKER',#{item.tackerOrder.userId}),
+            (#{item.tackerOrder.id},#{item.tackerOrder.userId},#{item.createAt},#{item.makerOrder.direction},#{item.makerOrder.id},#{item.price}
+            ,#{item.quantity},#{item.makerOrder.sequenceId},'MAKER',#{item.makerOrder.userId})
+        </foreach>
+    </insert>
+</mapper>

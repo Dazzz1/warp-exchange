@@ -1,0 +1,8 @@
+server:
+  port: 8004
+eureka:
+  instance:
+    instance-id: authentication-center
+authentication:
+  token:
+    expire: 1800000

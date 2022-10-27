@@ -1,0 +1,8 @@
+server:
+  port: ${eureka.server.port}
+eureka:
+  instance:
+    hostname: ${eureka.server.hostname}
+  client:
+    fetch-registry: false
+    register-with-eureka: false
